@@ -1,0 +1,19 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Temporary & Python scratch files
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Editor / IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary scratch scripts
+revert.py
+update_portfolio.py
