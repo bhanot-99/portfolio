@@ -713,38 +713,57 @@ document.addEventListener('DOMContentLoaded', () => {
         null: '#8b8b8b'
     };
 
+    const repoDescriptions = {
+        'portfolio': 'Interactive personal portfolio & ML research showcase with 3D scrollytelling and geometric ambient engine.',
+        'Clapy-JIT-Manga-Colorization-Platform': 'Real-time style-preserving manga panel colorization leveraging JIT compilation and deep learning.',
+        'Tomato-Disease-Image-Classification': 'Class-Aware Selective Mixing transfer learning architecture on PlantVillage dataset achieving 93.88% accuracy.',
+        'Machine-Learning-Datasets': 'Curated ML benchmark datasets, preprocessing utilities, and exploratory data analysis notebooks.',
+        'KuroPage': 'Full-stack web application with responsive UI, modern components, and clean architectural patterns.',
+        'AI_CHATBOT': 'Conversational AI system built with natural language processing and context-aware dialogue management.',
+        'E-Commerce-Using-Golang-gRPC': 'High-throughput microservices architecture with gRPC inter-service communication and PostgreSQL.',
+        'Manga-Store': 'Full-featured web platform for manga discovery and reader experience.',
+        'Air-Quality-Index': 'Environmental data analysis and Air Quality Index prediction using regression modeling.',
+        'Weather-Animation': 'Interactive weather animation interface with dynamic particle simulations and atmospheric styling.',
+        'CPP-Mastry': 'High-performance C++ algorithmic solutions, memory management practices, and design patterns.'
+    };
+
     async function fetchGitHubRepos() {
         if (!reposContainer) return;
         try {
             const response = await fetch(
                 'https://api.github.com/users/bhanot-99/repos?sort=updated&per_page=15'
             );
-            if (!response.ok) throw new Error('GitHub API error');
+            if (!response.ok) return; // Keep pre-rendered HTML intact on rate-limit or network failure
 
             const repos = await response.json();
-            const excludeKeywords = ['cloud', 'neuropaca', 'bhanot-99'];
+            if (!Array.isArray(repos) || repos.length === 0) return;
+
+            const excludeKeywords = ['cloud', 'neuropaca', 'bhanot-99', 'part-2', 'buddy', 'naa', 'life-plan', 'project_syskon'];
             const filtered = repos
                 .filter(r => {
-                    if (r.fork) return false;
+                    if (r.fork || r.private) return false;
                     const lowerName = (r.name || '').toLowerCase();
                     return !excludeKeywords.some(keyword => lowerName.includes(keyword));
                 })
                 .slice(0, 6);
 
-            reposContainer.innerHTML = filtered.map(repo => `
+            if (filtered.length === 0) return;
+
+            reposContainer.innerHTML = filtered.map(repo => {
+                const desc = repo.description || repoDescriptions[repo.name] || 'Open-source engineering and machine learning project by Jatin Bhanot.';
+                const lang = repo.language || 'Python';
+                return `
                 <div class="repo-card">
                     <div class="repo-name">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
                         <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">${repo.name}</a>
                     </div>
-                    <p class="repo-desc">${repo.description || 'No description available'}</p>
+                    <p class="repo-desc">${desc}</p>
                     <div class="repo-meta">
-                        ${repo.language ? `
-                            <span class="repo-lang">
-                                <span class="repo-lang-dot" style="background: ${langColors[repo.language] || '#8b8b8b'}"></span>
-                                ${repo.language}
-                            </span>
-                        ` : ''}
+                        <span class="repo-lang">
+                            <span class="repo-lang-dot" style="background: ${langColors[lang] || '#8b8b8b'}"></span>
+                            ${lang}
+                        </span>
                         <span class="repo-stat">
                             <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"></path></svg>
                             ${repo.stargazers_count}
@@ -755,17 +774,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         </span>
                     </div>
                 </div>
-            `).join('');
-        } catch (error) {
-            reposContainer.innerHTML = `
-                <div class="repo-card">
-                    <div class="repo-name">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
-                        <a href="https://github.com/bhanot-99" target="_blank" rel="noopener noreferrer">View all repositories on GitHub →</a>
-                    </div>
-                    <p class="repo-desc">Visit my GitHub profile to explore my projects, research code, and open-source contributions.</p>
-                </div>
             `;
+            }).join('');
+        } catch (error) {
+            // Keep existing pre-rendered HTML cards if network/API throws
         }
     }
 

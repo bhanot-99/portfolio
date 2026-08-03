@@ -1985,6 +1985,18 @@ input, textarea {
     color: var(--text-muted);
 }
 
+.footer-link {
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-fast), text-decoration var(--transition-fast);
+}
+
+.footer-link:hover {
+    color: var(--accent-secondary);
+    text-decoration: underline;
+}
+
 /* ═══════════════════════════════════════════
    BACK TO TOP BUTTON
    ═══════════════════════════════════════════ */
