@@ -146,10 +146,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const typewriterEl = document.querySelector('.typewriter-text');
     if (typewriterEl) {
         const strings = [
-            'ML Engineer',
-            'Edge AI Researcher',
-            'Backend Developer',
-            'CS Undergrad @ Chitkara'
+            'ML & Edge AI Researcher',
+            'Computer Vision Engineer',
+            'Formosa Univ. Taiwan Alum',
+            'Seeking Research Internships'
         ];
         let stringIndex = 0;
         let charIndex = 0;
@@ -670,9 +670,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const toast = document.getElementById('toast');
 
     if (emailCopyCard) {
-        emailCopyCard.addEventListener('click', (e) => {
-            if (e.target.closest('.direct-link')) return;
-
+        const copyEmail = () => {
             const email = 'bhanot1054@gmail.com';
             navigator.clipboard.writeText(email).then(() => {
                 if (toast) {
@@ -689,6 +687,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }).catch(() => {
                 window.location.href = 'mailto:' + email;
             });
+        };
+
+        emailCopyCard.addEventListener('click', (e) => {
+            if (e.target.closest('.direct-link')) return;
+            copyEmail();
+        });
+        emailCopyCard.addEventListener('keydown', (e) => {
+            if (e.target.closest('.direct-link')) return;
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                copyEmail();
+            }
         });
     }
 
@@ -727,6 +737,12 @@ document.addEventListener('DOMContentLoaded', () => {
         'CPP-Mastry': 'High-performance C++ algorithmic solutions, memory management practices, and design patterns.'
     };
 
+    function escapeHtml(str) {
+        return String(str).replace(/[&<>"']/g, (c) => ({
+            '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+        })[c]);
+    }
+
     async function fetchGitHubRepos() {
         if (!reposContainer) return;
         try {
@@ -750,19 +766,21 @@ document.addEventListener('DOMContentLoaded', () => {
             if (filtered.length === 0) return;
 
             reposContainer.innerHTML = filtered.map(repo => {
-                const desc = repo.description || repoDescriptions[repo.name] || 'Open-source engineering and machine learning project by Jatin Bhanot.';
+                const desc = escapeHtml(repo.description || repoDescriptions[repo.name] || 'Open-source engineering and machine learning project by Jatin Bhanot.');
                 const lang = repo.language || 'Python';
+                const name = escapeHtml(repo.name);
+                const url = encodeURI(repo.html_url || '');
                 return `
                 <div class="repo-card">
                     <div class="repo-name">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
-                        <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">${repo.name}</a>
+                        <a href="${url}" target="_blank" rel="noopener noreferrer">${name}</a>
                     </div>
                     <p class="repo-desc">${desc}</p>
                     <div class="repo-meta">
                         <span class="repo-lang">
                             <span class="repo-lang-dot" style="background: ${langColors[lang] || '#8b8b8b'}"></span>
-                            ${lang}
+                            ${escapeHtml(lang)}
                         </span>
                         <span class="repo-stat">
                             <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"></path></svg>
@@ -789,15 +807,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const projectData = {
         'uav-traffic': {
             icon: '🚁',
-            title: 'UAV-Based Real-Time Traffic Monitoring',
-            category: 'Edge AI • Computer Vision • Research',
-            description: 'A comprehensive UAV-based urban traffic analytics platform integrating AI, data processing, and hardware modules. The system performs real-time vehicle detection, tracking, congestion classification, and parking analysis from aerial footage.',
+            title: 'UAV-Based Real-Time Traffic Monitoring (NFU Taiwan)',
+            category: 'Edge AI • Computer Vision • National Formosa University',
+            description: 'A comprehensive UAV-based urban traffic analytics platform engineered during research at National Formosa University (Taiwan). Integrates real-time vehicle detection, tracking, congestion classification, and parking analysis directly on embedded edge hardware.',
             details: [
+                'Engineered at National Formosa University (Formosa TIP), Taiwan',
                 'End-to-end pipeline: VisDrone-trained YOLO11n (5 classes, conf=0.22) + ByteTrack over 2,049 frames',
                 '113K total detections with 2,527 unique vehicle IDs tracked, averaging 55 vehicles per frame',
                 'Congestion classifier achieving 96.6% SLOW classification accuracy with 3.2% CONGESTED detection',
                 'Parking detector: 174 spaces checked, 15 flagged as violations, 0 false positives',
-                'SAHI (Slicing Aided Hyper Inference) for small-object aerial detection',
+                'SAHI (Slicing Aided Hyper Inference) for small-object aerial detection under severe occlusion',
                 'Custom bounding-box heuristic to filter unmapped vehicle categories without retraining'
             ],
             tech: ['Python', 'YOLO11n', 'ByteTrack', 'SAHI', 'VisDrone', 'OpenCV', 'Edge AI'],
@@ -806,15 +825,16 @@ document.addEventListener('DOMContentLoaded', () => {
         'tomato-disease': {
             icon: '🍅',
             title: 'Tomato Disease Classification via Class-Aware Selective Mixing',
-            category: 'ML Research • Computer Vision • Independent Research',
-            description: 'A novel preprocessing architecture that routes each class to its empirically optimal visual domain, achieving significant accuracy improvements over standard approaches. Paper currently in progress.',
+            category: 'ML Research • Computer Vision • Publication in Progress',
+            description: 'A novel preprocessing architecture that routes each class to its empirically optimal visual domain, achieving significant accuracy improvements over standard approaches. Target venue: IEEE / Springer Computer Vision / AgTech submission (Q3/Q4 2026).',
             details: [
+                'Under active preparation for peer-reviewed conference/journal submission (Target: Q3/Q4 2026)',
                 'Controlled 5-strategy ablation on MobileNetV2 transfer learning',
                 'Dataset: PlantVillage with 18,160 images across 10 disease classes',
                 'Proposed Class-Aware Selective Mixing routing each class to optimal visual domain',
                 'Achieved 93.88% accuracy with F1 macro score of 0.940',
                 '+4.82% absolute improvement over colour-only baseline',
-                'Executed entirely on CPU-only hardware — demonstrating efficiency'
+                'Executed entirely on CPU-only hardware — demonstrating extreme inference efficiency'
             ],
             tech: ['PyTorch', 'MobileNetV2', 'PlantVillage', 'Transfer Learning', 'CPU Inference'],
             github: 'https://github.com/bhanot-99'
@@ -907,19 +927,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
         modalOverlay.classList.add('active');
         document.body.style.overflow = 'hidden';
+        if (modalCloseBtn) modalCloseBtn.focus();
     }
 
     function closeProjectModal() {
         if (modalOverlay) {
             modalOverlay.classList.remove('active');
             document.body.style.overflow = 'auto';
+            if (lastFocusedTrigger) {
+                lastFocusedTrigger.focus();
+                lastFocusedTrigger = null;
+            }
         }
     }
 
+    let lastFocusedTrigger = null;
+
     document.querySelectorAll('.project-card[data-project]').forEach(card => {
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('aria-label', `View details for ${card.querySelector('.project-title')?.textContent || 'project'}`);
+
         card.addEventListener('click', (e) => {
             e.preventDefault();
+            lastFocusedTrigger = card;
             openProjectModal(card.dataset.project);
+        });
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                lastFocusedTrigger = card;
+                openProjectModal(card.dataset.project);
+            }
         });
     });
 
@@ -930,7 +969,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeProjectModal();
+        if (e.key === 'Escape' && modalOverlay && modalOverlay.classList.contains('active')) closeProjectModal();
     });
 
     /* ─────────────────────────────────────────
@@ -1081,6 +1120,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const translateY = (normDist * 8).toFixed(1);
                 const scale = (1 - Math.abs(normDist) * 0.035).toFixed(3);
 
+                // Force instant transform here — the tilt-card hover handlers below can leave
+                // a lingering CSS transition applied, which would otherwise ease every
+                // scroll-driven frame update and make the 3D effect look laggy.
+                card.style.transition = 'none';
                 card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) translateY(${translateY}px) scale(${scale})`;
                 card.classList.toggle('story-focus-active', Math.abs(normDist) < 0.28);
             });
