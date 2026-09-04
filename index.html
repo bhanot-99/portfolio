@@ -390,24 +390,61 @@
                 <!-- Findings -->
                 <div class="npx-findings stagger-children">
                     <article class="npx-finding animate-on-scroll">
-                        <span class="npx-finding-eyebrow">Negative result → deliverable</span>
+                        <span class="npx-finding-eyebrow">B0 · Negative result → deliverable</span>
                         <h3>A 2-billion-parameter model can't write — so it doesn't.</h3>
-                        <p>B0's make-or-break test: can a model small enough for a laptop compose a grounded sentence about your habits? It scored <span class="npx-mark">0.00</span> at every context size. The whole system pivoted to <em>extractive</em> — fill blanks in fixed templates, never free-write. The failure is a paper deliverable in its own right.</p>
+                        <div class="npx-flow npx-fork">
+                            <span class="npx-node is-in">“write one grounded line”</span>
+                            <div class="npx-fork-branches">
+                                <div class="npx-flow-row"><span class="npx-arrow">→</span><span class="npx-node is-bad strike">free-write · scores 0.00</span></div>
+                                <div class="npx-flow-row"><span class="npx-arrow">→</span><span class="npx-node is-good">fill template blanks · shipped</span></div>
+                            </div>
+                        </div>
+                        <p class="npx-flow-key">0.00 at every context size → the system is extractive by design</p>
                     </article>
                     <article class="npx-finding animate-on-scroll">
-                        <span class="npx-finding-eyebrow">Structural guarantee</span>
+                        <span class="npx-finding-eyebrow">B7 · Structural guarantee</span>
                         <h3>Safety by construction, not by tuning.</h3>
-                        <p>The dangerous-action tier opens only when Diagnosis <em>and</em> Learning independently back the same node within two minutes. It is a set test over <span class="npx-mark">{diagnosis, learning}</span> — no volume of one loud signal can ever satisfy it. Not a threshold someone picked; a property of the shape.</p>
+                        <div class="npx-flow npx-gate">
+                            <div class="npx-gate-inputs">
+                                <span class="npx-node">Diagnosis</span>
+                                <span class="npx-node">Learning</span>
+                            </div>
+                            <span class="npx-arrow">→</span>
+                            <span class="npx-node is-op">AND</span>
+                            <span class="npx-arrow">→</span>
+                            <span class="npx-node is-good">dangerous tier opens</span>
+                        </div>
+                        <p class="npx-flow-key">one source ×∞ → gate never opens · it is a set test, not a threshold</p>
                     </article>
                     <article class="npx-finding animate-on-scroll">
-                        <span class="npx-finding-eyebrow">Methodology</span>
+                        <span class="npx-finding-eyebrow">B7→B9 · Methodology</span>
                         <h3>A quiet log and a broken pipeline look identical.</h3>
-                        <p>Three 24-hour dry-run soaks logged <span class="npx-mark">nothing at all</span>. Silence proves the system stays calm; it can't prove the system is alive. The soak was retired as a test and replaced with a positive control — a walled-off second copy, deliberately provoked: 60 proposals raised, 0 executed, 0 false alarms.</p>
+                        <div class="npx-flow">
+                            <div class="npx-flow-row">
+                                <span class="npx-node is-in">3 × 24 h soak</span><span class="npx-arrow">→</span>
+                                <span class="npx-node">empty log</span><span class="npx-arrow">→</span>
+                                <span class="npx-node is-warn">alive? or broken?</span>
+                            </div>
+                            <div class="npx-flow-row">
+                                <span class="npx-node is-op">positive control</span><span class="npx-arrow">→</span>
+                                <span class="npx-node">provoke load</span><span class="npx-arrow">→</span>
+                                <span class="npx-node is-good">60 proposed · 0 run · 0 false</span>
+                            </div>
+                        </div>
+                        <p class="npx-flow-key">the soak proves calm · only a provoked control proves alive</p>
                     </article>
                     <article class="npx-finding animate-on-scroll">
-                        <span class="npx-finding-eyebrow">Research note</span>
+                        <span class="npx-finding-eyebrow">B9 · Research note</span>
                         <h3>The most expensive bug predicts its own symptom.</h3>
-                        <p>One phase blamed a dead sensor on a missing display variable. The next phase <em>measured</em> it — the variable was there all along; the real fault was start-up ordering. A wrong root cause that explains every observation survives review and steers three phases around a problem that was never there. It goes in the paper next to the fix.</p>
+                        <div class="npx-flow npx-gate">
+                            <div class="npx-gate-inputs">
+                                <span class="npx-node is-bad strike">believed: no $WAYLAND_DISPLAY</span>
+                                <span class="npx-node is-good">measured: boot ordering</span>
+                            </div>
+                            <span class="npx-arrow">→</span>
+                            <span class="npx-node">identical symptom · dead sensor</span>
+                        </div>
+                        <p class="npx-flow-key">a wrong cause that predicts the symptom survives 3 phases · fix = 1 line</p>
                     </article>
                 </div>
 
