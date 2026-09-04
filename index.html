@@ -90,6 +90,12 @@
                     <span class="nav-label">About</span>
                 </a>
             </li>
+            <li class="nav-item" data-section="neuropaca-lab">
+                <a href="#neuropaca-lab" class="nav-link" aria-label="NeuroPACA Research">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                    <span class="nav-label">NeuroPACA</span>
+                </a>
+            </li>
             <li class="nav-item" data-section="projects">
                 <a href="#projects" class="nav-link" aria-label="Projects">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
@@ -153,13 +159,14 @@
         <ul class="story-hud-nodes">
             <li class="story-node active" data-target="hero"><a href="#hero" aria-label="Chapter 00: Prologue"><span class="node-dot"></span><span class="node-tooltip">00 · Prologue</span></a></li>
             <li class="story-node" data-target="about"><a href="#about" aria-label="Chapter 01: Identity"><span class="node-dot"></span><span class="node-tooltip">01 · Identity</span></a></li>
-            <li class="story-node" data-target="projects"><a href="#projects" aria-label="Chapter 02: Engineering"><span class="node-dot"></span><span class="node-tooltip">02 · Engineering</span></a></li>
-            <li class="story-node" data-target="process"><a href="#process" aria-label="Chapter 03: Methodology"><span class="node-dot"></span><span class="node-tooltip">03 · Methodology</span></a></li>
-            <li class="story-node" data-target="experience"><a href="#experience" aria-label="Chapter 04: Journey"><span class="node-dot"></span><span class="node-tooltip">04 · Journey</span></a></li>
-            <li class="story-node" data-target="skills"><a href="#skills" aria-label="Chapter 05: Arsenal"><span class="node-dot"></span><span class="node-tooltip">05 · Arsenal</span></a></li>
-            <li class="story-node" data-target="research"><a href="#research" aria-label="Chapter 06: Research"><span class="node-dot"></span><span class="node-tooltip">06 · Research</span></a></li>
-            <li class="story-node" data-target="beyond"><a href="#beyond" aria-label="Chapter 07: Beyond"><span class="node-dot"></span><span class="node-tooltip">07 · Beyond</span></a></li>
-            <li class="story-node" data-target="contact"><a href="#contact" aria-label="Chapter 08: Epilogue"><span class="node-dot"></span><span class="node-tooltip">08 · Epilogue</span></a></li>
+            <li class="story-node" data-target="neuropaca-lab"><a href="#neuropaca-lab" aria-label="Chapter 02: Frontier Research"><span class="node-dot"></span><span class="node-tooltip">02 · Frontier</span></a></li>
+            <li class="story-node" data-target="projects"><a href="#projects" aria-label="Chapter 03: Engineering"><span class="node-dot"></span><span class="node-tooltip">03 · Engineering</span></a></li>
+            <li class="story-node" data-target="process"><a href="#process" aria-label="Chapter 04: Methodology"><span class="node-dot"></span><span class="node-tooltip">04 · Methodology</span></a></li>
+            <li class="story-node" data-target="experience"><a href="#experience" aria-label="Chapter 05: Journey"><span class="node-dot"></span><span class="node-tooltip">05 · Journey</span></a></li>
+            <li class="story-node" data-target="skills"><a href="#skills" aria-label="Chapter 06: Arsenal"><span class="node-dot"></span><span class="node-tooltip">06 · Arsenal</span></a></li>
+            <li class="story-node" data-target="research"><a href="#research" aria-label="Chapter 07: Research"><span class="node-dot"></span><span class="node-tooltip">07 · Research</span></a></li>
+            <li class="story-node" data-target="beyond"><a href="#beyond" aria-label="Chapter 08: Beyond"><span class="node-dot"></span><span class="node-tooltip">08 · Beyond</span></a></li>
+            <li class="story-node" data-target="contact"><a href="#contact" aria-label="Chapter 09: Epilogue"><span class="node-dot"></span><span class="node-tooltip">09 · Epilogue</span></a></li>
         </ul>
     </nav>
 
@@ -279,14 +286,146 @@
             </div>
         </section>
 
-        <!-- ─────────────── PROJECTS SECTION ─────────────── -->
-        <section class="section section-alt" id="projects">
+        <!-- ─────────────── NEUROPACA RESEARCH SECTION ─────────────── -->
+        <section class="section" id="neuropaca-lab">
             <div class="section-container">
                 <div class="section-number" aria-hidden="true">02</div>
 
+                <div class="section-header animate-on-scroll">
+                    <div class="story-chapter-badge"><span class="chapter-dot"></span> CHAPTER 02 — NEUROPACA · FINDINGS FROM THE BUILD</div>
+                    <span class="section-label">FRONTIER RESEARCH</span>
+                    <h2 class="section-title">
+                        What a <span class="text-gradient">local-first cognitive agent</span> actually taught me — built one runnable daemon at a time, with every rejected path kept as a paper deliverable.
+                    </h2>
+                    <p class="section-description">
+                        NeuroPACA passively watches cold OS metrics, turns them into a personal behavioural knowledge graph, and answers from a small on-device model — zero cloud. Ten phases (B0–B9) validated on a single 16&nbsp;GB laptop. These are the results worth writing down.
+                    </p>
+                </div>
+
+                <!-- Animated signal → action pipeline -->
+                <div class="npx-pipeline animate-on-scroll">
+                    <div class="npx-pipeline-caption">The spine · how a blip becomes an action</div>
+                    <div class="npx-rail">
+                        <div class="npx-stage">
+                            <span class="npx-k">L2 · SENSE</span>
+                            <span class="npx-v">Collectors</span>
+                            <span class="npx-n">one sample every 60&nbsp;s</span>
+                        </div>
+                        <div class="npx-stage">
+                            <span class="npx-k">L3 · DIAGNOSE</span>
+                            <span class="npx-v">A signal</span>
+                            <span class="npx-n">a pattern fires · zero model calls</span>
+                        </div>
+                        <div class="npx-stage npx-hot">
+                            <span class="npx-k">L5 · PRESSURE</span>
+                            <span class="npx-v">It accrues</span>
+                            <span class="npx-n">builds on nodes · 60&nbsp;s half-life</span>
+                        </div>
+                        <div class="npx-stage">
+                            <span class="npx-k">L7 · GATE</span>
+                            <span class="npx-v">Safety</span>
+                            <span class="npx-n">sandbox · backup · audit</span>
+                        </div>
+                        <div class="npx-stage">
+                            <span class="npx-k">L9 · YOU</span>
+                            <span class="npx-v">Silence</span>
+                            <span class="npx-n">…or one question, asking</span>
+                        </div>
+                    </div>
+                    <div class="npx-track"><span class="npx-pulse"></span></div>
+                </div>
+
+                <!-- Self-drawing pressure-decay curve -->
+                <figure class="npx-figure animate-on-scroll">
+                    <svg viewBox="0 0 560 190" role="img" aria-label="Pressure decay curve: 100 percent at 0 minutes, 50 percent after 1 minute, about 0.1 percent after 10 minutes. Measured 0.0976 percent at ten half-lives against a predicted 0.0977 percent.">
+                        <line class="npx-axis" x1="46" y1="150" x2="532" y2="150" stroke-width="1" />
+                        <line class="npx-axis" x1="46" y1="18" x2="46" y2="150" stroke-width="1" />
+                        <line class="npx-grid" x1="46" y1="19" x2="532" y2="19" stroke-width="1" />
+                        <line class="npx-grid" x1="46" y1="84.5" x2="532" y2="84.5" stroke-width="1" />
+                        <text class="npx-axis-label" x="40" y="23" text-anchor="end">100%</text>
+                        <text class="npx-axis-label" x="40" y="88" text-anchor="end">50%</text>
+                        <text class="npx-axis-label" x="40" y="153" text-anchor="end">0%</text>
+                        <path class="npx-curve-fill" d="M46,19 C 70,52 82,66 94.6,84.5 C 118,116 140,133 143.2,136.8 C 170,148 200,149.4 240,149.8 C 320,150 440,150 532,150 L532,150 L46,150 Z" />
+                        <path class="npx-curve-line" d="M46,19 C 70,52 82,66 94.6,84.5 C 118,116 140,133 143.2,136.8 C 170,148 200,149.4 240,149.8 C 320,150 440,150 532,150" />
+                        <circle class="npx-curve-dot" cx="46" cy="19" r="3.4" />
+                        <circle class="npx-curve-dot" cx="94.6" cy="84.5" r="3.4" />
+                        <circle class="npx-curve-dot" cx="532" cy="150" r="3.4" />
+                        <text class="npx-axis-label" x="106" y="80" fill="currentColor">50% after 1 min</text>
+                        <text class="npx-axis-label" x="527" y="140" text-anchor="end" fill="currentColor">0.1% after 10 min</text>
+                        <text class="npx-axis-label" x="46" y="170" text-anchor="middle">0</text>
+                        <text class="npx-axis-label" x="240" y="170" text-anchor="middle">4 min</text>
+                        <text class="npx-axis-label" x="532" y="170" text-anchor="middle">10 min</text>
+                    </svg>
+                    <figcaption>Pressure after a node's last piece of evidence — 0.5<sup>(t / 60s)</sup>. On the real box, ten half-lives measured <strong>0.0976%</strong> against a predicted <strong>0.0977%</strong>. Stale evidence cannot quietly pile up into an action.</figcaption>
+                </figure>
+
+                <!-- Count-up metric band -->
+                <div class="npx-metrics stagger-children">
+                    <div class="npx-metric animate-on-scroll">
+                        <span class="npx-metric-val" data-count="0" data-decimals="2">0.00</span>
+                        <span class="npx-metric-label">grounded free-writing score for a 2B laptop model — at <em>every</em> context size (B0). The system went extractive.</span>
+                    </div>
+                    <div class="npx-metric animate-on-scroll">
+                        <span class="npx-metric-val" data-count="1477" data-suffix="&nbsp;MiB">0&nbsp;MiB</span>
+                        <span class="npx-metric-label">model memory, dead-flat across 1,215 inference cycles — no leak, no drift.</span>
+                    </div>
+                    <div class="npx-metric animate-on-scroll">
+                        <span class="npx-metric-val" data-count="294" data-suffix="&nbsp;ms">0&nbsp;ms</span>
+                        <span class="npx-metric-label">to load a 10,000-node behavioural graph from cold.</span>
+                    </div>
+                    <div class="npx-metric animate-on-scroll">
+                        <span class="npx-metric-val" data-count="0.09" data-decimals="2" data-suffix="&nbsp;ms">0.00&nbsp;ms</span>
+                        <span class="npx-metric-label">for a two-hop query across that graph.</span>
+                    </div>
+                    <div class="npx-metric animate-on-scroll">
+                        <span class="npx-metric-val" data-count="60" data-suffix="&nbsp;→&nbsp;0">0</span>
+                        <span class="npx-metric-label">actions proposed under a provoked load → actions actually executed. Zero high-tier false positives.</span>
+                    </div>
+                    <div class="npx-metric animate-on-scroll">
+                        <span class="npx-metric-val" data-count="371" data-suffix="/371">0/371</span>
+                        <span class="npx-metric-label">tests green inside a sandbox with no route to the internet — "it never phones home" is proven, not promised.</span>
+                    </div>
+                </div>
+
+                <!-- Findings -->
+                <div class="npx-findings stagger-children">
+                    <article class="npx-finding animate-on-scroll">
+                        <span class="npx-finding-eyebrow">Negative result → deliverable</span>
+                        <h3>A 2-billion-parameter model can't write — so it doesn't.</h3>
+                        <p>B0's make-or-break test: can a model small enough for a laptop compose a grounded sentence about your habits? It scored <span class="npx-mark">0.00</span> at every context size. The whole system pivoted to <em>extractive</em> — fill blanks in fixed templates, never free-write. The failure is a paper deliverable in its own right.</p>
+                    </article>
+                    <article class="npx-finding animate-on-scroll">
+                        <span class="npx-finding-eyebrow">Structural guarantee</span>
+                        <h3>Safety by construction, not by tuning.</h3>
+                        <p>The dangerous-action tier opens only when Diagnosis <em>and</em> Learning independently back the same node within two minutes. It is a set test over <span class="npx-mark">{diagnosis, learning}</span> — no volume of one loud signal can ever satisfy it. Not a threshold someone picked; a property of the shape.</p>
+                    </article>
+                    <article class="npx-finding animate-on-scroll">
+                        <span class="npx-finding-eyebrow">Methodology</span>
+                        <h3>A quiet log and a broken pipeline look identical.</h3>
+                        <p>Three 24-hour dry-run soaks logged <span class="npx-mark">nothing at all</span>. Silence proves the system stays calm; it can't prove the system is alive. The soak was retired as a test and replaced with a positive control — a walled-off second copy, deliberately provoked: 60 proposals raised, 0 executed, 0 false alarms.</p>
+                    </article>
+                    <article class="npx-finding animate-on-scroll">
+                        <span class="npx-finding-eyebrow">Research note</span>
+                        <h3>The most expensive bug predicts its own symptom.</h3>
+                        <p>One phase blamed a dead sensor on a missing display variable. The next phase <em>measured</em> it — the variable was there all along; the real fault was start-up ordering. A wrong root cause that explains every observation survives review and steers three phases around a problem that was never there. It goes in the paper next to the fix.</p>
+                    </article>
+                </div>
+
+                <a href="https://github.com/bhanot-99/NeuroPACA" target="_blank" rel="noopener noreferrer" class="view-all-link">
+                    READ THE FULL BUILD LOG
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- ─────────────── PROJECTS SECTION ─────────────── -->
+        <section class="section section-alt" id="projects">
+            <div class="section-container">
+                <div class="section-number" aria-hidden="true">03</div>
+
                 <div class="section-header-row animate-on-scroll">
                     <div>
-                        <div class="story-chapter-badge"><span class="chapter-dot"></span> CHAPTER 02.A — SELECTED PRODUCTION ARCHITECTURES</div>
+                        <div class="story-chapter-badge"><span class="chapter-dot"></span> CHAPTER 03.A — SELECTED PRODUCTION ARCHITECTURES</div>
                         <span class="section-label">FEATURED WORK</span>
                         <h2 class="section-title-sm">Selected Projects</h2>
                     </div>
@@ -423,7 +562,7 @@
 
                 <!-- GitHub Repos Dynamic Section -->
                 <div class="github-section animate-on-scroll">
-                    <div class="story-chapter-badge"><span class="chapter-dot"></span> CHAPTER 02.B — OPEN-SOURCE LAB EXPERIMENTS</div>
+                    <div class="story-chapter-badge"><span class="chapter-dot"></span> CHAPTER 03.B — OPEN-SOURCE LAB EXPERIMENTS</div>
                     <div class="github-header">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                         <h3>Latest from GitHub</h3>
@@ -501,10 +640,10 @@
         <!-- ─────────────── PROCESS SECTION ─────────────── -->
         <section class="section" id="process">
             <div class="section-container">
-                <div class="section-number" aria-hidden="true">03</div>
+                <div class="section-number" aria-hidden="true">04</div>
 
                 <div class="section-header animate-on-scroll">
-                    <div class="story-chapter-badge"><span class="chapter-dot"></span> CHAPTER 03 — 3-STAGE OPTIMISATION PIPELINE</div>
+                    <div class="story-chapter-badge"><span class="chapter-dot"></span> CHAPTER 04 — 3-STAGE OPTIMISATION PIPELINE</div>
                     <span class="section-label">MY APPROACH</span>
                     <h2 class="section-title-sm">How I Work</h2>
                 </div>
@@ -543,10 +682,10 @@
         <!-- ─────────────── EXPERIENCE SECTION ─────────────── -->
         <section class="section section-alt" id="experience">
             <div class="section-container">
-                <div class="section-number" aria-hidden="true">04</div>
+                <div class="section-number" aria-hidden="true">05</div>
 
                 <div class="section-header animate-on-scroll">
-                    <div class="story-chapter-badge"><span class="chapter-dot"></span> CHAPTER 04 — CAREER TRAJECTORY &amp; IMPACT</div>
+                    <div class="story-chapter-badge"><span class="chapter-dot"></span> CHAPTER 05 — CAREER TRAJECTORY &amp; IMPACT</div>
                     <span class="section-label">THE JOURNEY SO FAR</span>
                     <h2 class="section-title">Every chapter shaped who I am today.</h2>
                 </div>
@@ -675,10 +814,10 @@
         <!-- ─────────────── SKILLS SECTION ─────────────── -->
         <section class="section" id="skills">
             <div class="section-container">
-                <div class="section-number" aria-hidden="true">05</div>
+                <div class="section-number" aria-hidden="true">06</div>
 
                 <div class="section-header animate-on-scroll">
-                    <div class="story-chapter-badge"><span class="chapter-dot"></span> CHAPTER 05 — MULTI-TIER SYSTEM ARSENAL</div>
+                    <div class="story-chapter-badge"><span class="chapter-dot"></span> CHAPTER 06 — MULTI-TIER SYSTEM ARSENAL</div>
                     <span class="section-label">CAPABILITIES</span>
                     <h2 class="section-title-sm">Skills & Tools</h2>
                 </div>
@@ -759,10 +898,10 @@
         <!-- ─────────────── RESEARCH SECTION ─────────────── -->
         <section class="section section-alt" id="research">
             <div class="section-container">
-                <div class="section-number" aria-hidden="true">06</div>
+                <div class="section-number" aria-hidden="true">07</div>
 
                 <div class="section-header animate-on-scroll">
-                    <div class="story-chapter-badge"><span class="chapter-dot"></span> CHAPTER 06 — FRONTIER RESEARCH &amp; ABLATIONS</div>
+                    <div class="story-chapter-badge"><span class="chapter-dot"></span> CHAPTER 07 — RESEARCH INTERESTS &amp; DIRECTIONS</div>
                     <span class="section-label">WHAT EXCITES ME</span>
                     <h2 class="section-title-sm">Research Interests</h2>
                 </div>
@@ -807,10 +946,10 @@
         <!-- ─────────────── BEYOND WORK ─────────────── -->
         <section class="section" id="beyond">
             <div class="section-container">
-                <div class="section-number" aria-hidden="true">07</div>
+                <div class="section-number" aria-hidden="true">08</div>
 
                 <div class="section-header animate-on-scroll">
-                    <div class="story-chapter-badge"><span class="chapter-dot"></span> CHAPTER 07 — PERSPECTIVES &amp; ACHIEVEMENTS</div>
+                    <div class="story-chapter-badge"><span class="chapter-dot"></span> CHAPTER 08 — PERSPECTIVES &amp; ACHIEVEMENTS</div>
                 </div>
 
                 <div class="section-row">
@@ -869,12 +1008,12 @@
         <!-- ─────────────── CONTACT / LET'S CONNECT SECTION ─────────────── -->
         <section class="section section-alt" id="contact">
             <div class="section-container">
-                <div class="section-number" aria-hidden="true">08</div>
+                <div class="section-number" aria-hidden="true">09</div>
 
                 <div class="connect-hub animate-on-scroll">
                     <!-- Header / Chapter Badge -->
                     <div class="connect-header">
-                        <div class="story-chapter-badge"><span class="chapter-dot"></span> CHAPTER 08 — THE EPILOGUE &amp; DIALOGUE</div>
+                        <div class="story-chapter-badge"><span class="chapter-dot"></span> CHAPTER 09 — THE EPILOGUE &amp; DIALOGUE</div>
                         <span class="section-label">LET'S CONNECT</span>
                         <h2 class="connect-title">Have a Vision?<br><span class="gradient-text">Let's Build It Together.</span></h2>
                         <p class="connect-subtitle">

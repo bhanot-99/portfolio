@@ -3447,3 +3447,235 @@ html {
     50% { opacity: 1; filter: brightness(1.4); }
 }
 
+/* ═══════════════════════════════════════════
+   NEUROPACA RESEARCH SECTION (#neuropaca-lab)
+   ═══════════════════════════════════════════ */
+#neuropaca-lab .section-header { margin-bottom: 40px; }
+
+/* — Animated signal pipeline — */
+.npx-pipeline {
+    position: relative;
+    margin: 0 0 34px;
+    padding: 30px 28px 44px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    background: var(--bg-card);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    overflow: hidden;
+}
+.npx-pipeline-caption {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent-primary);
+    margin-bottom: 18px;
+}
+.npx-rail {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 4px 0;
+}
+.npx-stage {
+    flex: 1 1 150px;
+    min-width: 132px;
+    padding: 8px 12px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+.npx-stage + .npx-stage::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 12px; bottom: 12px;
+    width: 1px;
+    background: var(--border-subtle);
+}
+.npx-stage .npx-k {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    color: var(--accent-secondary);
+}
+.npx-stage .npx-v {
+    display: block;
+    font-weight: 700;
+    font-size: 0.98rem;
+    margin: 5px 0 3px;
+    color: var(--text-primary);
+}
+.npx-stage.npx-hot .npx-v { color: var(--accent-tertiary); }
+.npx-stage .npx-n {
+    display: block;
+    font-size: 0.76rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+}
+.npx-track {
+    position: absolute;
+    left: 28px; right: 28px;
+    bottom: 22px;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, transparent, var(--border-color) 20%, var(--border-color) 80%, transparent);
+}
+.npx-pulse {
+    position: absolute;
+    top: -3px; left: 0;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent-secondary);
+    box-shadow: 0 0 16px 4px var(--accent-secondary);
+    opacity: 0;
+}
+.npx-pipeline.visible .npx-pulse {
+    animation: npx-run 3.8s cubic-bezier(0.65, 0, 0.35, 1) 0.4s infinite;
+}
+@keyframes npx-run {
+    0%   { left: 0;    opacity: 0; }
+    6%   { opacity: 1; }
+    94%  { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+}
+
+/* — Decay curve figure — */
+.npx-figure {
+    margin: 0 0 52px;
+    padding: 22px 24px;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    background: var(--bg-card);
+}
+.npx-figure svg { width: 100%; height: auto; display: block; }
+.npx-figure figcaption {
+    margin-top: 10px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+}
+.npx-axis { stroke: var(--border-subtle); }
+.npx-grid { stroke: var(--border-subtle); stroke-dasharray: 2 4; }
+.npx-axis-label { fill: var(--text-muted); font-family: var(--font-mono); font-size: 10px; }
+.npx-curve-fill { fill: var(--accent-primary); opacity: 0.12; }
+.npx-curve-line { fill: none; stroke: var(--accent-primary); stroke-width: 2; stroke-dasharray: 640; stroke-dashoffset: 640; }
+.npx-figure.visible .npx-curve-line { animation: npx-draw 1.9s 0.25s ease forwards; }
+@keyframes npx-draw { to { stroke-dashoffset: 0; } }
+.npx-curve-dot { fill: var(--accent-secondary); opacity: 0; }
+.npx-figure.visible .npx-curve-dot { animation: npx-dot 0.4s ease forwards; }
+.npx-figure.visible .npx-curve-dot:nth-of-type(1) { animation-delay: 0.5s; }
+.npx-figure.visible .npx-curve-dot:nth-of-type(2) { animation-delay: 1.2s; }
+.npx-figure.visible .npx-curve-dot:nth-of-type(3) { animation-delay: 2.0s; }
+@keyframes npx-dot { to { opacity: 1; } }
+
+/* — Count-up metric band — */
+.npx-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(158px, 1fr));
+    gap: 14px;
+    margin-bottom: 52px;
+}
+.npx-metric {
+    padding: 20px 18px;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    background: var(--bg-card);
+    transition: border-color var(--transition-base), transform var(--transition-base);
+}
+.npx-metric:hover {
+    border-color: rgba(124, 58, 237, 0.35);
+    transform: translateY(-3px);
+}
+.npx-metric-val {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: clamp(1.4rem, 3.2vw, 2rem);
+    font-weight: 700;
+    line-height: 1.1;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.npx-metric-label {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* — Finding cards — */
+.npx-findings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(278px, 1fr));
+    gap: 18px;
+    margin-bottom: 34px;
+}
+.npx-finding {
+    position: relative;
+    padding: 24px 24px 22px 28px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    overflow: hidden;
+    transition: transform var(--transition-spring), border-color var(--transition-base), box-shadow var(--transition-base);
+}
+.npx-finding:hover {
+    transform: translateY(-5px);
+    border-color: rgba(124, 58, 237, 0.4);
+    box-shadow: var(--shadow-glow);
+}
+.npx-finding::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 3px;
+    background: var(--accent-gradient);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.55s ease;
+}
+.npx-finding.visible::before,
+.npx-finding:hover::before { transform: scaleY(1); }
+.npx-finding-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-primary);
+}
+.npx-finding h3 {
+    font-size: 1.04rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 10px 0 8px;
+    color: var(--text-primary);
+}
+.npx-finding p {
+    font-size: 0.89rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+}
+.npx-finding p .npx-mark {
+    color: var(--text-primary);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+    .npx-pipeline { padding: 24px 18px 40px; }
+    .npx-stage { flex-basis: 45%; }
+    .npx-stage + .npx-stage::before { display: none; }
+    .npx-track { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .npx-pipeline.visible .npx-pulse { animation: none; opacity: 0.6; left: 50%; }
+    .npx-figure.visible .npx-curve-line { animation: none; stroke-dashoffset: 0; }
+    .npx-figure.visible .npx-curve-dot { animation: none; opacity: 1; }
+}
+

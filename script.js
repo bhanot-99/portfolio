@@ -140,6 +140,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.journey-chapter').forEach(ch => metricObserver.observe(ch));
 
+    // NeuroPACA section — count-up metric values
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const formatCount = (el, value) => {
+        const decimals = parseInt(el.dataset.decimals || '0', 10);
+        const suffix = el.dataset.suffix || '';
+        el.innerHTML = value.toFixed(decimals) + suffix;
+    };
+    const countObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            countObserver.unobserve(el);
+            const target = parseFloat(el.dataset.count);
+            if (isNaN(target)) return;
+            if (prefersReducedMotion) { formatCount(el, target); return; }
+            const duration = 1400;
+            const start = performance.now();
+            const tick = (now) => {
+                const t = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - t, 3);
+                formatCount(el, target * eased);
+                if (t < 1) requestAnimationFrame(tick);
+                else formatCount(el, target);
+            };
+            requestAnimationFrame(tick);
+        });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.npx-metric-val[data-count]').forEach(el => countObserver.observe(el));
+
     /* ─────────────────────────────────────────
        5. TYPEWRITER EFFECT
        ───────────────────────────────────────── */
