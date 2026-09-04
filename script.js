@@ -726,7 +726,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const repoDescriptions = {
         'portfolio': 'Interactive personal portfolio & ML research showcase with 3D scrollytelling and geometric ambient engine.',
         'Clapy-JIT-Manga-Colorization-Platform': 'Real-time style-preserving manga panel colorization leveraging JIT compilation and deep learning.',
-        'Tomato-Disease-Image-Classification': 'Class-Aware Selective Mixing transfer learning architecture on PlantVillage dataset achieving 93.88% accuracy.',
+        'NeuroPACA': 'Local-first behavioural-graph daemon: turns cold OS metrics into a personal knowledge graph and grounded, on-device answers. Zero cloud, no telemetry.',
         'Machine-Learning-Datasets': 'Curated ML benchmark datasets, preprocessing utilities, and exploratory data analysis notebooks.',
         'KuroPage': 'Full-stack web application with responsive UI, modern components, and clean architectural patterns.',
         'AI_CHATBOT': 'Conversational AI system built with natural language processing and context-aware dialogue management.',
@@ -754,7 +754,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const repos = await response.json();
             if (!Array.isArray(repos) || repos.length === 0) return;
 
-            const excludeKeywords = ['cloud', 'neuropaca', 'bhanot-99', 'part-2', 'buddy', 'naa', 'life-plan', 'project_syskon'];
+            const excludeKeywords = ['cloud', 'bhanot-99', 'part-2', 'buddy', 'naa', 'life-plan', 'project_syskon'];
             const filtered = repos
                 .filter(r => {
                     if (r.fork || r.private) return false;
@@ -822,22 +822,23 @@ document.addEventListener('DOMContentLoaded', () => {
             tech: ['Python', 'YOLO11n', 'ByteTrack', 'SAHI', 'VisDrone', 'OpenCV', 'Edge AI'],
             github: 'https://github.com/bhanot-99'
         },
-        'tomato-disease': {
-            icon: '🍅',
-            title: 'Tomato Disease Classification via Class-Aware Selective Mixing',
-            category: 'ML Research • Computer Vision • Publication in Progress',
-            description: 'A novel preprocessing architecture that routes each class to its empirically optimal visual domain, achieving significant accuracy improvements over standard approaches. Target venue: IEEE / Springer Computer Vision / AgTech submission (Q3/Q4 2026).',
+        'neuropaca': {
+            icon: '🧠',
+            title: 'NeuroPACA — Neuromorphic Personal Autonomous Computing Agent',
+            category: 'Systems ML Research • Local-First Autonomous AI',
+            description: 'A local AI that learns your machine, builds a behavioural graph of how you work, and gives grounded answers from a small local model — with zero cloud dependency. It passively watches cold OS-level numbers every 60 seconds, turns them into named behavioural patterns, and stores them in a personal knowledge graph.',
             details: [
-                'Under active preparation for peer-reviewed conference/journal submission (Target: Q3/Q4 2026)',
-                'Controlled 5-strategy ablation on MobileNetV2 transfer learning',
-                'Dataset: PlantVillage with 18,160 images across 10 disease classes',
-                'Proposed Class-Aware Selective Mixing routing each class to optimal visual domain',
-                'Achieved 93.88% accuracy with F1 macro score of 0.940',
-                '+4.82% absolute improvement over colour-only baseline',
-                'Executed entirely on CPU-only hardware — demonstrating extreme inference efficiency'
+                '10-layer cognitive architecture: sensing → diagnosis → learning → idle cognition → drive → action → agents → interface',
+                'Passive sensing of CPU, RAM, disk, temperature, processes and system logs every 60 seconds',
+                'Personal knowledge graph where every node carries one relevance_score (0–10) governing retention, idle replay, and context ranking',
+                'Rule-based diagnosis turns raw metrics into named behavioural patterns; grounded answers cite real graph nodes',
+                'Action layer ships inert (dry-run, safe tier only) behind a single SafetyGate with a full audit log',
+                'Runs on one CPU-only laptop, single user, single graph — no GPU, no accounts, no telemetry',
+                'Deferred phase: Lottery-Ticket-style pruning of a local model toward your actual work',
+                'Goal: a publishable research paper — benchmarks and rejected alternatives are deliverables'
             ],
-            tech: ['PyTorch', 'MobileNetV2', 'PlantVillage', 'Transfer Learning', 'CPU Inference'],
-            github: 'https://github.com/bhanot-99'
+            tech: ['Python', 'Knowledge Graph', 'Local LLM', 'systemd', 'CPU Inference', 'Linux'],
+            github: 'https://github.com/bhanot-99/NeuroPACA'
         },
         'microservices': {
             icon: '⚙️',

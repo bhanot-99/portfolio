@@ -7,7 +7,7 @@ An interactive, high-performance portfolio showcasing machine learning research,
 - **Cinematic 3D Spatial Scrollytelling Engine**: Hardware-accelerated depth, pitch, and focus tracking on active cards with zero layout thrashing.
 - **Procedural Geometric Ambient Engine**: Dynamic canvas-based continuous 45° flow with multi-layer depth, dynamic theming, and multi-pass alpha glow.
 - **Responsive Connect Hub**: Glassmorphic interactive cards with click-to-clipboard email copy, live status indicator, and direct social integration.
-- **Dynamic Project Modals**: Detailed deep-dives into UAV traffic monitoring, tomato disease classification, Golang microservices, and Web3 smart contract research.
+- **Dynamic Project Modals**: Detailed deep-dives into UAV traffic monitoring, the NeuroPACA local autonomous agent, Golang microservices, and Web3 smart contract research.
 - **Dual-Theme System**: Seamless dark / light theme switching with custom HSL tokens and frosted glass aesthetics.
 - **Automated GitHub Integration**: Live fetching and rendering of featured repositories with stargazers and language badges.
 - **Ultra-Smooth Momentum Scrolling**: Integrated Lenis smooth scroll engine with requestAnimationFrame-batched pipeline.
