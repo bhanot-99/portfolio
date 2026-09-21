@@ -3448,9 +3448,9 @@ html {
 }
 
 /* ═══════════════════════════════════════════
-   NEUROPACA RESEARCH SECTION (#neuropaca-lab)
+   NEUROOS RESEARCH SECTION (#neuroos-lab)
    ═══════════════════════════════════════════ */
-#neuropaca-lab .section-header { margin-bottom: 40px; }
+#neuroos-lab .section-header { margin-bottom: 40px; }
 
 /* — Animated signal pipeline — */
 .npx-pipeline {
@@ -3669,8 +3669,8 @@ html {
 }
 
 /* — Justified prose in the section — */
-#neuropaca-lab .section-description,
-#neuropaca-lab .npx-figure figcaption { text-align: justify; text-justify: inter-word; }
+#neuroos-lab .section-description,
+#neuroos-lab .npx-figure figcaption { text-align: justify; text-justify: inter-word; }
 
 /* — Finding cards as flow diagrams (no prose) — */
 .npx-finding { padding: 24px 24px 20px 28px; }
@@ -3763,3 +3763,6 @@ html {
     .npx-finding.visible .npx-arrow { animation: none; }
 }
 
+
+#neuroos-lab .npx-metric-label code,
+#neuroos-lab .npx-flow-key code { font-family: "JetBrains Mono", monospace; font-size: 0.9em; }

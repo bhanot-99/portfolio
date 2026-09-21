@@ -90,10 +90,10 @@
                     <span class="nav-label">About</span>
                 </a>
             </li>
-            <li class="nav-item" data-section="neuropaca-lab">
-                <a href="#neuropaca-lab" class="nav-link" aria-label="NeuroPACA Research">
+            <li class="nav-item" data-section="neuroos-lab">
+                <a href="#neuroos-lab" class="nav-link" aria-label="NeuroOS Research">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-                    <span class="nav-label">NeuroPACA</span>
+                    <span class="nav-label">NeuroOS</span>
                 </a>
             </li>
             <li class="nav-item" data-section="projects">
@@ -159,7 +159,7 @@
         <ul class="story-hud-nodes">
             <li class="story-node active" data-target="hero"><a href="#hero" aria-label="Chapter 00: Prologue"><span class="node-dot"></span><span class="node-tooltip">00 · Prologue</span></a></li>
             <li class="story-node" data-target="about"><a href="#about" aria-label="Chapter 01: Identity"><span class="node-dot"></span><span class="node-tooltip">01 · Identity</span></a></li>
-            <li class="story-node" data-target="neuropaca-lab"><a href="#neuropaca-lab" aria-label="Chapter 02: Frontier Research"><span class="node-dot"></span><span class="node-tooltip">02 · Frontier</span></a></li>
+            <li class="story-node" data-target="neuroos-lab"><a href="#neuroos-lab" aria-label="Chapter 02: Frontier Research"><span class="node-dot"></span><span class="node-tooltip">02 · Frontier</span></a></li>
             <li class="story-node" data-target="projects"><a href="#projects" aria-label="Chapter 03: Engineering"><span class="node-dot"></span><span class="node-tooltip">03 · Engineering</span></a></li>
             <li class="story-node" data-target="process"><a href="#process" aria-label="Chapter 04: Methodology"><span class="node-dot"></span><span class="node-tooltip">04 · Methodology</span></a></li>
             <li class="story-node" data-target="experience"><a href="#experience" aria-label="Chapter 05: Journey"><span class="node-dot"></span><span class="node-tooltip">05 · Journey</span></a></li>
@@ -214,7 +214,7 @@
                             </div>
                             <div class="proof-item">
                                 <span class="proof-val">0</span>
-                                <span class="proof-label">Cloud Calls — NeuroPACA Runs Fully On-Device</span>
+                                <span class="proof-label">Cloud Calls — NeuroOS Runs Fully On-Device</span>
                             </div>
                             <div class="proof-item">
                                 <span class="proof-val">2</span>
@@ -286,169 +286,143 @@
             </div>
         </section>
 
-        <!-- ─────────────── NEUROPACA RESEARCH SECTION ─────────────── -->
-        <section class="section" id="neuropaca-lab">
+        <!-- ─────────────── NEUROOS RESEARCH SECTION ─────────────── -->
+        <section class="section" id="neuroos-lab">
             <div class="section-container">
                 <div class="section-number" aria-hidden="true">02</div>
 
                 <div class="section-header animate-on-scroll">
-                    <div class="story-chapter-badge"><span class="chapter-dot"></span> CHAPTER 02 — NEUROPACA · FINDINGS FROM THE BUILD</div>
+                    <div class="story-chapter-badge"><span class="chapter-dot"></span> CHAPTER 02 — NEUROOS · FINDINGS FROM THE BUILD</div>
                     <span class="section-label">FRONTIER RESEARCH</span>
                     <h2 class="section-title">
-                        What a <span class="text-gradient">local-first cognitive agent</span> actually taught me — built one runnable daemon at a time, with every rejected path kept as a paper deliverable.
+                        What a <span class="text-gradient">zero-egress voice secretary</span> actually taught me — built one hardened layer at a time, with every rejected path kept as a paper deliverable.
                     </h2>
                     <p class="section-description">
-                        NeuroPACA passively watches cold OS metrics, turns them into a personal behavioural knowledge graph, and answers from a small on-device model — zero cloud. Ten phases (B0–B9) validated on a single 16&nbsp;GB laptop. These are the results worth writing down.
+                        NeuroOS is a locally-run autonomous secretary for Linux desktops. It waits for a wake word, canonicalises what you said against what was on screen, gates every action through a safety layer, and speaks back — inside a systemd network namespace with no route out. A Rust core, a C++20 inference engine, an isolated Python worker and a sandboxed fetcher, measured on a single Ryzen&nbsp;7 laptop. These are the results worth writing down.
                     </p>
                 </div>
 
                 <!-- Animated signal → action pipeline -->
                 <div class="npx-pipeline animate-on-scroll">
-                    <div class="npx-pipeline-caption">The spine · how a blip becomes an action</div>
+                    <div class="npx-pipeline-caption">The spine · how a spoken word becomes an action</div>
                     <div class="npx-rail">
                         <div class="npx-stage">
-                            <span class="npx-k">L2 · SENSE</span>
-                            <span class="npx-v">Collectors</span>
-                            <span class="npx-n">one sample every 60&nbsp;s</span>
+                            <span class="npx-k">L1 · SENSE</span>
+                            <span class="npx-v">Desktop</span>
+                            <span class="npx-n">telemetry · focus · PipeWire mic</span>
                         </div>
                         <div class="npx-stage">
-                            <span class="npx-k">L3 · DIAGNOSE</span>
-                            <span class="npx-v">A signal</span>
-                            <span class="npx-n">a pattern fires · zero model calls</span>
+                            <span class="npx-k">L1 · WAKE</span>
+                            <span class="npx-v">“Jarvis”</span>
+                            <span class="npx-n">nothing is heard until it's said</span>
+                        </div>
+                        <div class="npx-stage">
+                            <span class="npx-k">L1 · UNDERSTAND</span>
+                            <span class="npx-v">Canonicalise</span>
+                            <span class="npx-n">RapidFuzz + BM25 · ±1.5&nbsp;s snapping</span>
                         </div>
                         <div class="npx-stage npx-hot">
-                            <span class="npx-k">L5 · PRESSURE</span>
-                            <span class="npx-v">It accrues</span>
-                            <span class="npx-n">builds on nodes · 60&nbsp;s half-life</span>
-                        </div>
-                        <div class="npx-stage">
                             <span class="npx-k">L7 · GATE</span>
                             <span class="npx-v">Safety</span>
-                            <span class="npx-n">sandbox · backup · audit</span>
+                            <span class="npx-n">safe · review · dangerous · audit</span>
                         </div>
                         <div class="npx-stage">
-                            <span class="npx-k">L9 · YOU</span>
-                            <span class="npx-v">Silence</span>
-                            <span class="npx-n">…or one question, asking</span>
+                            <span class="npx-k">L2 · SPEAK</span>
+                            <span class="npx-v">Voice</span>
+                            <span class="npx-n">Piper preamble → Kokoro · barge-in</span>
                         </div>
                     </div>
                     <div class="npx-track"><span class="npx-pulse"></span></div>
                 </div>
 
-                <!-- Self-drawing pressure-decay curve -->
-                <figure class="npx-figure animate-on-scroll">
-                    <svg viewBox="0 0 560 190" role="img" aria-label="Pressure decay curve: 100 percent at 0 minutes, 50 percent after 1 minute, about 0.1 percent after 10 minutes. Measured 0.0976 percent at ten half-lives against a predicted 0.0977 percent.">
-                        <line class="npx-axis" x1="46" y1="150" x2="532" y2="150" stroke-width="1" />
-                        <line class="npx-axis" x1="46" y1="18" x2="46" y2="150" stroke-width="1" />
-                        <line class="npx-grid" x1="46" y1="19" x2="532" y2="19" stroke-width="1" />
-                        <line class="npx-grid" x1="46" y1="84.5" x2="532" y2="84.5" stroke-width="1" />
-                        <text class="npx-axis-label" x="40" y="23" text-anchor="end">100%</text>
-                        <text class="npx-axis-label" x="40" y="88" text-anchor="end">50%</text>
-                        <text class="npx-axis-label" x="40" y="153" text-anchor="end">0%</text>
-                        <path class="npx-curve-fill" d="M46,19 C 70,52 82,66 94.6,84.5 C 118,116 140,133 143.2,136.8 C 170,148 200,149.4 240,149.8 C 320,150 440,150 532,150 L532,150 L46,150 Z" />
-                        <path class="npx-curve-line" d="M46,19 C 70,52 82,66 94.6,84.5 C 118,116 140,133 143.2,136.8 C 170,148 200,149.4 240,149.8 C 320,150 440,150 532,150" />
-                        <circle class="npx-curve-dot" cx="46" cy="19" r="3.4" />
-                        <circle class="npx-curve-dot" cx="94.6" cy="84.5" r="3.4" />
-                        <circle class="npx-curve-dot" cx="532" cy="150" r="3.4" />
-                        <text class="npx-axis-label" x="106" y="80" fill="currentColor">50% after 1 min</text>
-                        <text class="npx-axis-label" x="527" y="140" text-anchor="end" fill="currentColor">0.1% after 10 min</text>
-                        <text class="npx-axis-label" x="46" y="170" text-anchor="middle">0</text>
-                        <text class="npx-axis-label" x="240" y="170" text-anchor="middle">4 min</text>
-                        <text class="npx-axis-label" x="532" y="170" text-anchor="middle">10 min</text>
-                    </svg>
-                    <figcaption>Pressure after a node's last piece of evidence — 0.5<sup>(t / 60s)</sup>. On the real box, ten half-lives measured <strong>0.0976%</strong> against a predicted <strong>0.0977%</strong>. Stale evidence cannot quietly pile up into an action.</figcaption>
-                </figure>
-
                 <!-- Count-up metric band -->
                 <div class="npx-metrics stagger-children">
                     <div class="npx-metric animate-on-scroll">
-                        <span class="npx-metric-val" data-count="0" data-decimals="2">0.00</span>
-                        <span class="npx-metric-label">grounded free-writing score for a 2B laptop model — at <em>every</em> context size (B0). The system went extractive.</span>
+                        <span class="npx-metric-val" data-count="0">0</span>
+                        <span class="npx-metric-label">network interfaces beyond loopback inside the core daemon (<code>PrivateNetwork=true</code>). Only the isolated fetcher can touch the network.</span>
                     </div>
                     <div class="npx-metric animate-on-scroll">
-                        <span class="npx-metric-val" data-count="1477" data-suffix="&nbsp;MiB">0&nbsp;MiB</span>
-                        <span class="npx-metric-label">model memory, dead-flat across 1,215 inference cycles — no leak, no drift.</span>
+                        <span class="npx-metric-val" data-count="1000" data-suffix="&nbsp;/&nbsp;1000">0</span>
+                        <span class="npx-metric-label">audio barge-in flushes under the 1&nbsp;ms budget — typically under 10&nbsp;µs. Speech stops the instant you talk over it.</span>
                     </div>
                     <div class="npx-metric animate-on-scroll">
-                        <span class="npx-metric-val" data-count="294" data-suffix="&nbsp;ms">0&nbsp;ms</span>
-                        <span class="npx-metric-label">to load a 10,000-node behavioural graph from cold.</span>
+                        <span class="npx-metric-val" data-count="503" data-suffix="&nbsp;MiB">0&nbsp;MiB</span>
+                        <span class="npx-metric-label">speech-synthesis memory growth, down from 602&nbsp;MiB — ONNX arena off and <code>malloc_trim</code> after load.</span>
                     </div>
                     <div class="npx-metric animate-on-scroll">
-                        <span class="npx-metric-val" data-count="0.09" data-decimals="2" data-suffix="&nbsp;ms">0.00&nbsp;ms</span>
-                        <span class="npx-metric-label">for a two-hop query across that graph.</span>
+                        <span class="npx-metric-val" data-count="405" data-suffix="&nbsp;ms">0&nbsp;ms</span>
+                        <span class="npx-metric-label">worst measured Kokoro vocoder time for a 10-token clause (about 1.7&nbsp;s of audio), FP32 on 8 threads.</span>
                     </div>
                     <div class="npx-metric animate-on-scroll">
-                        <span class="npx-metric-val" data-count="60" data-suffix="&nbsp;→&nbsp;0">0</span>
-                        <span class="npx-metric-label">actions proposed under a provoked load → actions actually executed. Zero high-tier false positives.</span>
+                        <span class="npx-metric-val" data-count="0.65" data-decimals="2" data-suffix="&nbsp;ms">0.00&nbsp;ms</span>
+                        <span class="npx-metric-label">for a graph-neural-network traversal across 13 domain hubs, in pure NumPy/SciPy.</span>
                     </div>
                     <div class="npx-metric animate-on-scroll">
-                        <span class="npx-metric-val" data-count="371" data-suffix="/371">0/371</span>
-                        <span class="npx-metric-label">tests green inside a sandbox with no route to the internet — "it never phones home" is proven, not promised.</span>
+                        <span class="npx-metric-val" data-count="0.016" data-decimals="3" data-suffix="&nbsp;ms">0.000&nbsp;ms</span>
+                        <span class="npx-metric-label">perceived time-to-first-audio when a cached Piper filler covers the wait for the neural voice.</span>
                     </div>
                 </div>
 
                 <!-- Findings -->
                 <div class="npx-findings stagger-children">
                     <article class="npx-finding animate-on-scroll">
-                        <span class="npx-finding-eyebrow">B0 · Negative result → deliverable</span>
-                        <h3>A 2-billion-parameter model can't write — so it doesn't.</h3>
+                        <span class="npx-finding-eyebrow">L2 · Negative result → deliverable</span>
+                        <h3>Quantising the voice made it worse, so it stays full precision.</h3>
                         <div class="npx-flow npx-fork">
-                            <span class="npx-node is-in">“write one grounded line”</span>
+                            <span class="npx-node is-in">“shrink Kokoro's memory”</span>
                             <div class="npx-fork-branches">
-                                <div class="npx-flow-row"><span class="npx-arrow">→</span><span class="npx-node is-bad strike">free-write · scores 0.00</span></div>
-                                <div class="npx-flow-row"><span class="npx-arrow">→</span><span class="npx-node is-good">fill template blanks · shipped</span></div>
+                                <div class="npx-flow-row"><span class="npx-arrow">→</span><span class="npx-node is-bad strike">INT8 · duration predictor collapses</span></div>
+                                <div class="npx-flow-row"><span class="npx-arrow">→</span><span class="npx-node is-good">FP32 + arena off + trim · shipped</span></div>
                             </div>
                         </div>
-                        <p class="npx-flow-key">0.00 at every context size → the system is extractive by design</p>
+                        <p class="npx-flow-key">quantised Conv ran ~5× slower · the wins came from memory management, not precision</p>
                     </article>
                     <article class="npx-finding animate-on-scroll">
-                        <span class="npx-finding-eyebrow">B7 · Structural guarantee</span>
+                        <span class="npx-finding-eyebrow">L7 · Structural guarantee</span>
                         <h3>Safety by construction, not by tuning.</h3>
                         <div class="npx-flow npx-gate">
                             <div class="npx-gate-inputs">
-                                <span class="npx-node">Diagnosis</span>
-                                <span class="npx-node">Learning</span>
+                                <span class="npx-node">Skill call</span>
+                                <span class="npx-node is-bad strike">direct plugin call</span>
                             </div>
                             <span class="npx-arrow">→</span>
-                            <span class="npx-node is-op">AND</span>
+                            <span class="npx-node is-op">dispatch</span>
                             <span class="npx-arrow">→</span>
-                            <span class="npx-node is-good">dangerous tier opens</span>
+                            <span class="npx-node is-good">gated · audited</span>
                         </div>
-                        <p class="npx-flow-key">one source ×∞ → gate never opens · it is a set test, not a threshold</p>
+                        <p class="npx-flow-key">one choke-point · bypassing it raises <code>PermissionError</code> · every attempt and result lands in an append-only log</p>
                     </article>
                     <article class="npx-finding animate-on-scroll">
-                        <span class="npx-finding-eyebrow">B7→B9 · Methodology</span>
-                        <h3>A quiet log and a broken pipeline look identical.</h3>
+                        <span class="npx-finding-eyebrow">L3 · Fault isolation</span>
+                        <h3>A crashing C extension must not take the daemon down.</h3>
                         <div class="npx-flow">
                             <div class="npx-flow-row">
-                                <span class="npx-node is-in">3 × 24 h soak</span><span class="npx-arrow">→</span>
-                                <span class="npx-node">empty log</span><span class="npx-arrow">→</span>
-                                <span class="npx-node is-warn">alive? or broken?</span>
+                                <span class="npx-node is-in">Python worker</span><span class="npx-arrow">→</span>
+                                <span class="npx-node is-warn">poisoned buffer</span>
                             </div>
                             <div class="npx-flow-row">
-                                <span class="npx-node is-op">positive control</span><span class="npx-arrow">→</span>
-                                <span class="npx-node">provoke load</span><span class="npx-arrow">→</span>
-                                <span class="npx-node is-good">60 proposed · 0 run · 0 false</span>
+                                <span class="npx-node is-op">seqlock recovery</span><span class="npx-arrow">→</span>
+                                <span class="npx-node is-good">&lt;50 ms · zero daemon downtime</span>
                             </div>
                         </div>
-                        <p class="npx-flow-key">the soak proves calm · only a provoked control proves alive</p>
+                        <p class="npx-flow-key">graph reasoning lives in its own process · shared memory is the only door</p>
                     </article>
                     <article class="npx-finding animate-on-scroll">
-                        <span class="npx-finding-eyebrow">B9 · Research note</span>
-                        <h3>The most expensive bug predicts its own symptom.</h3>
+                        <span class="npx-finding-eyebrow">L4 · Threat model</span>
+                        <h3>Treat the web as hostile input, not as knowledge.</h3>
                         <div class="npx-flow npx-gate">
                             <div class="npx-gate-inputs">
-                                <span class="npx-node is-bad strike">believed: no $WAYLAND_DISPLAY</span>
-                                <span class="npx-node is-good">measured: boot ordering</span>
+                                <span class="npx-node is-bad strike">raw page text</span>
+                                <span class="npx-node is-good">extracted key-value facts</span>
                             </div>
                             <span class="npx-arrow">→</span>
-                            <span class="npx-node">identical symptom · dead sensor</span>
+                            <span class="npx-node">untrusted-doc tags · 0600 spool</span>
                         </div>
-                        <p class="npx-flow-key">a wrong cause that predicts the symptom survives 3 phases · fix = 1 line</p>
+                        <p class="npx-flow-key">only the fetcher touches the network · prompt injection is neutralised before the model sees a byte</p>
                     </article>
                 </div>
 
-                <a href="https://github.com/bhanot-99/NeuroPACA" target="_blank" rel="noopener noreferrer" class="view-all-link">
+                <a href="https://github.com/bhanot-99/NeuroOS" target="_blank" rel="noopener noreferrer" class="view-all-link">
                     READ THE FULL BUILD LOG
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
@@ -494,22 +468,22 @@
                         </div>
                     </div>
 
-                    <!-- Project 2: NeuroPACA -->
-                    <div class="project-card animate-on-scroll tilt-card" data-project="neuropaca" data-github="https://github.com/bhanot-99/NeuroPACA">
+                    <!-- Project 2: NeuroOS -->
+                    <div class="project-card animate-on-scroll tilt-card" data-project="neuroos" data-github="https://github.com/bhanot-99/NeuroOS">
                         <div class="project-image" style="background: linear-gradient(135deg, #1a2e2e 0%, #12303d 50%, #16324a 100%);">
                             <div class="project-image-content">
                                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="1.5"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M19.1 4.9l-2.8 2.8M7.7 16.3l-2.8 2.8"></path></svg>
-                                <span class="project-image-text">Local Autonomous Agent</span>
+                                <span class="project-image-text">Local Voice Secretary</span>
                             </div>
                         </div>
                         <div class="project-info">
-                            <h3 class="project-title">NeuroPACA</h3>
-                            <p class="project-category">Systems ML Research • Local-First Autonomous AI</p>
-                            <p class="project-desc">A neuromorphic personal agent: watches cold OS metrics every 60s, builds a personal behavioural knowledge graph, and answers from a small on-device model — zero cloud, no telemetry. 10-layer cognitive architecture, CPU-only.</p>
+                            <h3 class="project-title">NeuroOS</h3>
+                            <p class="project-category">Systems Research • Local-First Autonomous AI</p>
+                            <p class="project-desc">A hardened, zero-egress autonomous secretary for Linux desktops: wake-word voice, safety-gated actions and a private knowledge graph, all on-device. Rust core, C++20 SIMD inference, isolated Python worker, CPU-only.</p>
                             <div class="project-tech">
+                                <span class="tech-badge">Rust</span>
+                                <span class="tech-badge">C++20</span>
                                 <span class="tech-badge">Python</span>
-                                <span class="tech-badge">Knowledge Graph</span>
-                                <span class="tech-badge">Local LLM</span>
                                 <span class="tech-badge">systemd</span>
                             </div>
                         </div>
@@ -651,9 +625,9 @@
                         <div class="repo-card">
                             <div class="repo-name">
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
-                                <a href="https://github.com/bhanot-99/NeuroPACA" target="_blank" rel="noopener noreferrer">NeuroPACA</a>
+                                <a href="https://github.com/bhanot-99/NeuroOS" target="_blank" rel="noopener noreferrer">NeuroOS</a>
                             </div>
-                            <p class="repo-desc">Local-first behavioural-graph daemon: turns cold OS metrics into a personal knowledge graph and grounded, on-device answers. Zero cloud.</p>
+                            <p class="repo-desc">Hardened, zero-egress autonomous secretary for Linux desktops: wake-word voice, safety-gated actions, private knowledge graph. Zero cloud.</p>
                             <div class="repo-meta">
                                 <span class="repo-lang">
                                     <span class="repo-lang-dot" style="background: #3572A5"></span>
@@ -946,12 +920,12 @@
                 <div class="research-grid stagger-children">
                     <div class="research-card animate-on-scroll">
                         <div class="research-icon">🧠</div>
-                        <h3 class="research-title">Sparse Personalised AI (NeuroPACA)</h3>
-                        <p class="research-desc">A local-first behavioural knowledge graph of how you actually use your machine — with a deferred phase that applies Lottery Ticket Hypothesis pruning to grow an ultra-lightweight LLM subnetwork around that graph.</p>
+                        <h3 class="research-title">Local-First Personal AI (NeuroOS)</h3>
+                        <p class="research-desc">A zero-egress assistant that learns how you actually use your machine — voice, ternary-weight BitNet inference and a private knowledge graph on one CPU — with process isolation and a safety gate as first-class research constraints.</p>
                         <div class="research-tags">
-                            <span class="research-tag">LTH Pruning</span>
+                            <span class="research-tag">BitNet b1.58</span>
                             <span class="research-tag">Edge LLMs</span>
-                            <span class="research-tag">Personalisation</span>
+                            <span class="research-tag">Zero-Egress Security</span>
                         </div>
                     </div>
 
