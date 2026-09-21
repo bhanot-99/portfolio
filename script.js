@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.journey-chapter').forEach(ch => metricObserver.observe(ch));
 
-    // NeuroPACA section — count-up metric values
+    // NeuroOS section — count-up metric values
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const formatCount = (el, value) => {
         const decimals = parseInt(el.dataset.decimals || '0', 10);
@@ -755,7 +755,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const repoDescriptions = {
         'portfolio': 'Interactive personal portfolio & ML research showcase with 3D scrollytelling and geometric ambient engine.',
         'Clapy-JIT-Manga-Colorization-Platform': 'Real-time style-preserving manga panel colorization leveraging JIT compilation and deep learning.',
-        'NeuroPACA': 'Local-first behavioural-graph daemon: turns cold OS metrics into a personal knowledge graph and grounded, on-device answers. Zero cloud, no telemetry.',
+        'NeuroOS': 'Hardened, zero-egress autonomous secretary for Linux desktops: wake-word voice, safety-gated actions, private knowledge graph. Zero cloud, no telemetry.',
         'Machine-Learning-Datasets': 'Curated ML benchmark datasets, preprocessing utilities, and exploratory data analysis notebooks.',
         'KuroPage': 'Full-stack web application with responsive UI, modern components, and clean architectural patterns.',
         'AI_CHATBOT': 'Conversational AI system built with natural language processing and context-aware dialogue management.',
@@ -851,23 +851,23 @@ document.addEventListener('DOMContentLoaded', () => {
             tech: ['Python', 'YOLO11n', 'ByteTrack', 'SAHI', 'VisDrone', 'OpenCV', 'Edge AI'],
             github: 'https://github.com/bhanot-99'
         },
-        'neuropaca': {
+        'neuroos': {
             icon: '🧠',
-            title: 'NeuroPACA — Neuromorphic Personal Autonomous Computing Agent',
-            category: 'Systems ML Research • Local-First Autonomous AI',
-            description: 'A local AI that learns your machine, builds a behavioural graph of how you work, and gives grounded answers from a small local model — with zero cloud dependency. It passively watches cold OS-level numbers every 60 seconds, turns them into named behavioural patterns, and stores them in a personal knowledge graph.',
+            title: 'NeuroOS — A Zero-Egress Autonomous Secretary for Linux',
+            category: 'Systems Research • Local-First Autonomous AI',
+            description: 'A hardened, locally-run autonomous secretary for Linux desktops. It listens for a wake word, resolves what you said against what was on screen, runs every action through a safety gate, and answers by voice — while the core daemon runs in a systemd network namespace with no route to the internet. Grew out of NeuroPACA, the earlier Python-only prototype.',
             details: [
-                '10-layer cognitive architecture: sensing → diagnosis → learning → idle cognition → drive → action → agents → interface',
-                'Passive sensing of CPU, RAM, disk, temperature, processes and system logs every 60 seconds',
-                'Personal knowledge graph where every node carries one relevance_score (0–10) governing retention, idle replay, and context ranking',
-                'Rule-based diagnosis turns raw metrics into named behavioural patterns; grounded answers cite real graph nodes',
-                'Action layer ships inert (dry-run, safe tier only) behind a single SafetyGate with a full audit log',
-                'Runs on one CPU-only laptop, single user, single graph — no GPU, no accounts, no telemetry',
-                'Deferred phase: Lottery-Ticket-style pruning of a local model toward your actual work',
-                'Goal: a publishable research paper — benchmarks and rejected alternatives are deliverables'
+                'Polyglot four-layer design: Rust core daemon, C++20 SIMD inference engine, process-isolated Python worker, sandboxed network fetcher',
+                'Zero egress: core daemon runs under systemd PrivateNetwork=true; only the isolated fetcher may touch the network, and its output is wrapped as untrusted input',
+                'Wake word gates the microphone; PipeWire capture with echo cancellation and Silero VAD; sub-millisecond barge-in cancels speech when you talk over it',
+                'Assist Canonicalizer: RapidFuzz + BM25 lexical matching with ±1.5 s deictic snapping resolves “that thing from a minute ago” against episodic memory',
+                'L7 SafetyGate classifies every action SAFE, REVIEW or DANGEROUS; one dispatch choke-point, append-only audit log of every attempt and result',
+                'BitNet b1.58 ternary LLM via a cxx FFI bridge, with runtime AVX-512 / AVX2 / SSSE3 dispatch; Piper preamble plus Kokoro-82M neural voice',
+                'Python worker: NumPy/SciPy APPNP graph network, Hebbian temporal-graph plasticity and LightRAG retrieval, isolated behind a shared-memory seqlock ring buffer',
+                'Runs on one CPU-only Linux laptop — no GPU, no accounts, no telemetry; benchmarks and rejected alternatives are paper deliverables'
             ],
-            tech: ['Python', 'Knowledge Graph', 'Local LLM', 'systemd', 'CPU Inference', 'Linux'],
-            github: 'https://github.com/bhanot-99/NeuroPACA'
+            tech: ['Rust', 'C++20', 'Python', 'BitNet', 'PipeWire', 'systemd', 'SQLite', 'Linux'],
+            github: 'https://github.com/bhanot-99/NeuroOS'
         },
         'microservices': {
             icon: '⚙️',
